@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Study Graph</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="graph">
+    <div class="stars"></div>
+<div class="container">
+
+    <h2>🌌 Study Hours Graph</h2>
+
+    <div class="card">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script>
+        const chartData = JSON.parse('{{ data | tojson | safe }}');
+
+        const labels = chartData.map(row => row[0]);
+        const hours = chartData.map(row => row[1]);
+
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Study Hours',
+                    data: hours,
+                    borderWidth: 2,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        labels: {
+                            color: 'white'
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        ticks: { color: 'white' }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        ticks: { color: 'white' }
+                    }
+                }
+            }
+        });
+    </script>
+
+    <br>
+
+    <div class="card">
+        <a href="/">⬅ Back</a>
+    </div>
+
+</div>
+</body>
+</html>

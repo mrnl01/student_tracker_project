@@ -1,0 +1,152 @@
+/* 🌌 GLOBAL STYLES */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+/* 🌑 HOME - DARK SPACE */
+.home {
+    background: linear-gradient(135deg, #0a0f2c, #000000);
+    min-height: 100vh;
+}
+
+/* 🔵 ADD SUBJECT - NEPTUNE */
+.add-subject {
+    background: linear-gradient(135deg, #1b3c59, #3a86ff);
+    min-height: 100vh;
+}
+
+/* 🔴 ADD LOG - MARS */
+.add-log {
+    background: linear-gradient(135deg, #3b0d11, #a4161a);
+    min-height: 100vh;
+}
+
+/* 🟣 GOALS - GALAXY */
+.goals {
+    background: linear-gradient(135deg, #240046, #5a189a);
+    min-height: 100vh;
+}
+
+/* 🌌 GRAPH - SPACE BLUE */
+.graph {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    min-height: 100vh;
+}
+
+/* ✨ CARD STYLE */
+.container {
+    padding: 30px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+/* 🌟 BUTTONS */
+button {
+    background: #6c63ff;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #5a54d1;
+}
+
+/* ✨ LINKS */
+a {
+    color: #cdb4db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* 🌌 FADE IN PAGE */
+body {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 💫 FLOATING CARDS */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    box-shadow: 0 0 15px #6c63ff;
+    transform: scale(1.05);
+}
+
+a {
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px #cdb4db;
+}
+
+input, textarea, select {
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-top: 5px;
+}
+
+input:focus, textarea:focus {
+    box-shadow: 0 0 10px #6c63ff;
+}
+
+/* 🌌 STARS BACKGROUND */
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    background-image: radial-gradient(white 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: moveStars 60s linear infinite;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+@keyframes moveStars {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-1000px);
+    }
+}
