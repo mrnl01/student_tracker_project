@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Tracker</title>
+</head>
+<body>
+
+<h1>📚 My Subjects</h1>
+
+<a href="/add_subject">➕ Add Subject</a>
+<br><br>
+
+<ul>
+    {% for subject in subjects %}
+        <li>
+            <b>{{ subject[1] }}</b>
+            {% if subject[2] %} ⭐ Major {% endif %}
+
+            <br>
+            <a href="/add_log/{{ subject[0] }}">Add Log</a> |
+            <a href="/add_goal/{{ subject[0] }}">Set Goal</a>
+        </li>
+        <br>
+    {% endfor %}
+</ul>
+
+<br>
+<a href="/graph">📊 View Study Graph</a>
+
+</body>
+</html>
